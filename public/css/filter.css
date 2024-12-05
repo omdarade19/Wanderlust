@@ -1,0 +1,154 @@
+.filters {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Prevent wrapping to the next line */
+    align-items: center;
+    justify-content: flex-start;
+    /* Align items to the left */
+    gap: 0.5rem;
+    padding: 0.2rem 1rem 1rem 1rem;
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    scrollbar-width: none;
+    /* Make scrollbar less intrusive (for Firefox) */
+}
+/* 
+.tax-toggle {
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    white-space: nowrap;
+    /* Prevent text wrapping */
+    /* text-align: center;
+    font-size: 0.9rem;
+    margin-left: auto; */
+    /* Push to the end of the row */
+    /* flex-shrink: 0; */
+    /* Prevent shrinking during scrolling */
+/* } */ */
+
+#filter {
+    text-align: center;
+    padding: 0.5rem;
+    width: 100px;
+    height: 80px;
+    /* Fixed smaller height */
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    flex-shrink: 0;
+    /* Prevent filters from shrinking during scrolling */
+}
+
+#filter {
+    text-align: center;
+    padding: 0.5rem;
+    width: 100px;
+    height: 80px;
+    /* Fixed smaller height */
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+#filter:hover {
+    background-color: black;
+    color: wheat;
+    transform: scale(1.1);
+    /* Slight zoom effect on hover */
+}
+
+#filter i {
+    font-size: 1rem;
+    /* Adjusted smaller icon size */
+    opacity: 0.8;
+    margin-bottom: 0.3rem;
+    transition: opacity 0.3s;
+}
+
+#filter i:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#filter p {
+    font-size: 0.4rem;
+    /* Smaller text size */
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .filters {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    #filter {
+        width: 80px;
+        /* Smaller box for medium screens */
+        height: 80px;
+    }
+
+    #filter i {
+        font-size: 1.2rem;
+        /* Smaller icons for medium screens */
+    }
+
+    #filter p {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #filter {
+        width: 70px;
+        /* Even smaller box for mobile screens */
+        height: 70px;
+    }
+
+    #filter i {
+        font-size: 1rem;
+        /* Smaller icons for small screens */
+    }
+
+    #filter p {
+        font-size: 0.6rem;
+    }
+}
+
+/* //------------------------------------- */
+
+
+.tax-toggle {
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 0.9rem;
+    flex-shrink: 0; 
+    margin-left: auto; 
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .filters {
+        justify-content: flex-start; 
+        padding: 1rem;
+    }
+
+    .tax-toggle {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 10;
+        font-size: 0.8rem; 
+    }
+}
+/* .tax-info{
+    display: none;
+} */
