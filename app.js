@@ -25,11 +25,10 @@ const userRouter = require("./router/user.js");
 const { error } = require('console');
 
 
-// const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
-const dbUrl = process.env.ATLASDB_URL;
+const mongoUrl="mongodb://127.0.0.1:27017/wanderlust";
+// const dbUrl = process.env.ATLASDB_URL;
 
-console.log(dbUrl);
 
 main()
   .then(() => {
@@ -40,7 +39,7 @@ main()
   });
 
 async function main() {
-  mongoose.connect(dbUrl);
+  mongoose.connect(mongoUrl);
   
 }
 
@@ -53,19 +52,19 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 
 const store = mongoStore.create({
-  mongoUrl : dbUrl,
+  mongoUrl : mongoUrl,
   crypto : {
     secret : process.env.SECRET,
   },
   touchAfter : 24*3600,
 });
 
-store.on("error", ()=>{
-  console.log("Error Ocurse in Session Store",err);
-});
+// store.on("error", ()=>{
+//   console.log("Error Ocurse in Session Store",err);
+// });
 
 const sessionOptions ={
-  store,
+  // store,
   secret :  process.env.SECRET,
   resave : false,
   saveUninitialized :true ,

@@ -42,7 +42,6 @@ module.exports.index = async (req, res)=>{
     newListing.image={url, filename};
     newListing.geometry = response.body.features[0].geometry;
     let savedListing = await newListing.save();
-    console.log(savedListing);
     req.flash("success", "New Listing Created !");
     res.redirect("/listing");
   };
@@ -50,7 +49,6 @@ module.exports.index = async (req, res)=>{
   module.exports.destroyListing = async (req, res)=>{
     const { id } = req.params;
     let deletedListing = await Listing.findByIdAndDelete(id);
-    console.log(deletedListing);
     req.flash("success", "Listing Deleted !");
     res.redirect("/listing");
   };
@@ -88,7 +86,6 @@ module.exports.index = async (req, res)=>{
 
   module.exports.type = async (req, res) => {
     let { name } = req.params;
-    console.log(name);
     let allListings = await Listing.find({ kind: { $eq: name } });
     res.render("./listings/index.ejs", { allListings });
 }
