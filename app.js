@@ -59,12 +59,12 @@ const store = mongoStore.create({
   touchAfter : 24*3600,
 });
 
-// store.on("error", ()=>{
-//   console.log("Error Ocurse in Session Store",err);
-// });
+store.on("error", ()=>{
+  console.log("Error Ocurse in Session Store",err);
+});
 
 const sessionOptions ={
-  // store,
+  store,
   secret :  process.env.SECRET,
   resave : false,
   saveUninitialized :true ,
