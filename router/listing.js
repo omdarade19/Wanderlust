@@ -8,7 +8,7 @@ const listingController = require("../controllers/listing.js");
 const multer  = require('multer');
 const {storage} = require("../cloudenaryStorage.js");
 const upload = multer({ storage });
-const Review = require("./Review.js");
+const Review = require("../models/review.js");
 
 
 router.route("/")
