@@ -19,4 +19,7 @@ const reviewSchema = new Schema({
 });
 
 // Check if the model already exists to avoid OverwriteModelError
-module.exports = mongoose.models.Review || mongoose.model("Review", reviewSchema);
+// module.exports = mongoose.models.Review || mongoose.model("Review", reviewSchema);
+
+const Review = mongoose.model("Review", reviewSchema);
+module.exports = Review;
