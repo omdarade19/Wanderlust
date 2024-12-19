@@ -27,7 +27,7 @@ const { error } = require('console');
 
 
 const mongoUrl="mongodb://127.0.0.1:27017/wanderlust";
-// const dbUrl = process.env.ATLASDB_URL;
+const dbUrl = process.env.ATLASDB_URL;
 
 
 main()
@@ -39,7 +39,7 @@ main()
   });
 
 async function main() {
-  mongoose.connect(mongoUrl);
+  mongoose.connect(dbUrl);
   
 }
 
@@ -52,7 +52,7 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 
 const store = mongoStore.create({
-  mongoUrl : mongoUrl,
+  mongoUrl : dbUrl,
   crypto : {
     secret : process.env.SECRET,
   },
